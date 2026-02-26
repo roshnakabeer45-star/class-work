@@ -1,78 +1,54 @@
 
 
+
+
 import React from "react";
-import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import internalImage from "./images/girl.jpg";
 
 function App() {
 
-  
-  const name = "Alex";
-  const age = 20;
-  const isStudent = true;
+  console.log("React app started");
 
-  
-  const favoriteHobbies = ["Reading", "Hiking", "Coding"];
+  const userName = "Roshna";  
 
-  
-  const hobbyListFor = [];
-  for (let i = 0; i < favoriteHobbies.length; i++) {
-    hobbyListFor.push(
-      <li key={i}>{favoriteHobbies[i]}</li>
-    );
-  }
-
-  
-  function showMessage() {
-    document.getElementById("message").innerHTML =
-      "Hello from React! I love my hobbies!";
-
-    const headingColor = "lightblue";
-    document.getElementById("mainHeading").style.backgroundColor =
-      headingColor;
-  }
+  const headingStyle = {
+    color: "darkblue",
+    backgroundColor: "lightyellow",
+    padding: "10px",
+    borderRadius: "10px"
+  };
 
   return (
-    <div className="container mt-4">
-
+    <div className="container d-flex justify-content-center align-items-center vh-100">
       
-      <h1 id="mainHeading" className="text-center p-2">
-        My Personal Profile
-      </h1>
+      <div className="card shadow p-4 text-center" style={{width: "400px"}}>
+
+       
+        <h2 style={headingStyle}>
+          Welcome to React Learning, {userName}
+        </h2>
 
      
-      <div className="card p-3 shadow mt-3">
-        <h3>Personal Information</h3>
-        <p><strong>Name:</strong> {name}</p>
-        <p><strong>Age:</strong> {age}</p>
-        <p><strong>Student:</strong> {isStudent.toString()}</p>
+        <img
+          src={internalImage}
+          alt="Internal"
+          className="img-fluid mx-auto mt-3"
+          style={{ width: "200px" }}
+        />
+
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+          alt="External React"
+          className="img-fluid mx-auto mt-3"
+        />
+
+     
+        <p className="mt-3 text-muted">
+          This is your first card with images and styles!
+        </p>
+
       </div>
-
-      <div className="mt-4">
-        <h3>My Favorite Hobbies (Using For Loop)</h3>
-        <ul>
-          {hobbyListFor}
-        </ul>
-
-        <h3>My Favorite Hobbies (Using map())</h3>
-        <ul>
-          {favoriteHobbies.map((hobby, index) => (
-            <li key={index}>{hobby}</li>
-          ))}
-        </ul>
-      </div>
-
-
-      <button 
-        className="btn btn-primary mt-3"
-        onClick={showMessage}
-      >
-        Show Enthusiasm
-      </button>
-
-  
-      <p id="message" className="mt-3">
-        Click the button to see my enthusiasm!
-      </p>
 
     </div>
   );
