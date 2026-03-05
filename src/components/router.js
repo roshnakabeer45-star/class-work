@@ -1,15 +1,22 @@
+
+
 import { createBrowserRouter } from "react-router-dom";
 import Home from "./Home";
 import Student from "./Student";
+import BookCrud from "./BookCrud";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />
+    element: <BookCrud />   // open BookCrud first
   },
   {
-    path: "/student/:name",   // Parameterised route
+    path: "/student/:name",
     element: <Student />
+  },
+  {
+    path: "/home",
+    element: <Home />
   }
 ]);
 
