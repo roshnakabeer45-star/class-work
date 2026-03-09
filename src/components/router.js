@@ -1,21 +1,21 @@
-import { createBrowserRouter } from "react-router-dom";
 
-import BookList from "./books/BookList";
-import CreateBook from "./books/CreateBook";
-import EditBook from "./books/EditBook";
+
+import { createBrowserRouter } from "react-router-dom";
+import Register from "./auth/Register";
+import Login from "./auth/Login";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <BookList/>
+    element: <h1>Welcome Page</h1>
   },
   {
-    path: "/books/create",
-    element: <CreateBook/>
+    path: "/register",
+    element: <Register/>
   },
   {
-    path: "/books/edit/:id",
-    element: <EditBook/>
+    path: "/login",
+    element: <Login/>
   }
 ]);
 
