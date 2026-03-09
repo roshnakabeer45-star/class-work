@@ -1,22 +1,21 @@
-
-
 import { createBrowserRouter } from "react-router-dom";
-import Home from "./Home";
-import Student from "./Student";
-import BookCrud from "./BookCrud";
+
+import BookList from "./books/BookList";
+import CreateBook from "./books/CreateBook";
+import EditBook from "./books/EditBook";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <BookCrud />   // open BookCrud first
+    element: <BookList/>
   },
   {
-    path: "/student/:name",
-    element: <Student />
+    path: "/books/create",
+    element: <CreateBook/>
   },
   {
-    path: "/home",
-    element: <Home />
+    path: "/books/edit/:id",
+    element: <EditBook/>
   }
 ]);
 
